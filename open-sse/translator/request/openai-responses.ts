@@ -105,7 +105,7 @@ function appendReasoningContent(current: unknown, next: string): string {
   return existing ? `${existing}\n\n${next}` : next;
 }
 
-function normalizeRoleBasedToolCalls(toolCalls: unknown): JsonRecord[] {
+function normalizeRoleBasedToolCalls(toolCalls: unknown): Array<JsonRecord & { id: string }> {
   if (!Array.isArray(toolCalls)) return [];
 
   return (
