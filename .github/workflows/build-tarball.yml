@@ -17,6 +17,8 @@ jobs:
 
       - run: npm install --ignore-scripts
       - run: npm run build:fast
+        env:
+          OMNIROUTE_USE_TURBOPACK: "0"
       - run: npm run build:cli
       - run: npm pack --ignore-scripts
 
